@@ -21,3 +21,12 @@ Here are some ideas to get you started:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\.venv\Scripts\Activate.ps1
 ```
+---
+
+Important
+
+To prevent accidentally uploading files with user credentials or similar items, you can use the following command:
+
+```powershell
+git update-index --assume-unchanged "File/Path/Name"
+```
