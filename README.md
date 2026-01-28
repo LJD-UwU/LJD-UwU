@@ -23,10 +23,10 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ```
 ---
 
-Important
-
-To prevent accidentally uploading files with user credentials or similar items, you can use the following command:
-
-```powershell
-git update-index --assume-unchanged "File/Path/Name"
-```
+>[!IMPORTANT]
+>
+>To prevent accidentally uploading files with user credentials or similar items, you can use the following command:
+>
+>```powershell
+>git update-index --assume-unchanged "File/Path/Name"
+>```
