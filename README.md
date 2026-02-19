@@ -21,6 +21,11 @@ Here are some ideas to get you started:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\.venv\Scripts\Activate.ps1
 ```
+
+>[TIP]
+>```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
 ---
 
 >[!IMPORTANT]
