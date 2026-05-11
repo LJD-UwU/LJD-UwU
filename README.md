@@ -24,6 +24,55 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 
 ---
 
+## Copiar archivos de ramas a main
+
+Supón:
+
+- Rama: feature/macros
+- Carpeta: macro/
+
+Entonces:
+
+```powershell
+git checkout main
+git pull
+git checkout feature/macros -- macro/
+git add macro/
+git commit -m "Import macro folder from feature/macros"
+git push
+```
+
+Qué pasa exactamente
+
+Git toma el contenido actual de:
+
+> feature/macros:macro/
+
+y lo copia dentro de:
+
+> main:macro/
+
+Como si hubieras pegado la carpeta manualmente.
+
+**Importante**
+
+Si en main ya existe macro/:
+
+Los archivos iguales se sobrescriben\
+Los nuevos se agregan\
+Los que no existan en la rama NO se eliminan automáticamente\
+
+**Alternativa moderna (git restore)\**
+Más nuevo y limpio:
+
+```powershell
+git restore --source feature/macros -- macro/
+```
+
+Hace prácticamente lo mismo.
+
+---
+
 ## 🔐 Security & Git hygiene
 
 To prevent accidentally committing sensitive files
